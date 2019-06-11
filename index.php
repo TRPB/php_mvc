@@ -1,11 +1,15 @@
-<html>
+<?php
+// 应用目录是当前目录
+define('APP_PATH', __DIR__ . '/');
 
-<head>
-    <title>PHP 测试</title>
-</head>
+// // 开启调试模式
+define('APP_DEBUG', true);
 
-<body>
-    <?php echo "<h1>hello world</h1>"; ?>
-</body>
+// // 加载框架文件
+require(APP_PATH . 'fastphp/Fastphp.php');
 
-</html>
+// // 加载配置文件
+$config = require(APP_PATH . 'config/config.php');
+
+// 实例化框架类
+(new fastphp\Fastphp($config))->run();
