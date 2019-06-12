@@ -6,3 +6,8 @@
 # 启动命令：
 sudo /etc/init.d/php7-fpm start
 ```
+
+2. 查看Ubuntu Apache2 服务器日志
+```sh
+tail -f /var/log/apache2/*.log
+```
