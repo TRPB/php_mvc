@@ -11,3 +11,5 @@ sudo /etc/init.d/php7-fpm start
 ```sh
 tail -f /var/log/apache2/*.log
 ```
+
+3. remote-ssh
