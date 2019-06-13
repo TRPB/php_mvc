@@ -28,3 +28,19 @@ The server is temporarily unable to service your request due to maintenance down
 ```bash
 sudo /etc/init.d/php7.3-fpm start
 ```
+
+5. MYSQL
+```sh
+# 启动mysql
+sudo service mysql start 
+```
+一直报错
+```
+-su: 30: export: : bad variable name
+```
+最终问题定位： 在`/etc/profile` 之前添加了如下语句
+```sh
+SET NODE_HOME=/opt/node10.16.0-linux-x64
+PATH = $PAHT:NODE_HOME
+```
+删除上面自己添加的即可启动
