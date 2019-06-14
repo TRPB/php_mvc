@@ -27,17 +27,27 @@ class Fastphp
         $this->removeMagicQuotes();
         $this->unregisterGlobals();
         $this->setDbConfig();
+        $this->route();
+    }
+
+    // 路由处理
+    public function route()
+    {
+        if (APP_DEBUG === true) {
+            // https://blog.csdn.net/qq_35433716/article/details/82283824
+            echo "<table><tr><th>" . DB_HOST . "</th><th>" . DB_NAME . "</th></tr></table>";
+            echo phpinfo();
+        }
     }
 
     // 检测开发环境
     public function setReporting()
     {
         if (APP_DEBUG === true) {
-            error_reporting(EALL);
+            error_reporting(E_ALL);
             // PHP ini_set用来设置php.ini的值，在函数执行的时候生效，脚本结束后，设置失效。
             // 无需打开php.ini文件，就能修改配置，对于虚拟空间来说，很方便。 
             ini_set('display_errors', 'On');
-            echo phpinfo();
         } else {
             error_reporting(E_ALL);
             ini_set('display_errors', 'Off');
@@ -88,7 +98,7 @@ class Fastphp
     public function setDbConfig()
     {
         if ($this->config['db']) {
-            define('DB_HOST', $this['db']['host']);
+            define('DB_HOST', $this->config['db']['host']);
             define('DB_NAME', $this->config['db']['dbname']);
             define('DB_USER', $this->config['db']['username']);
             define('DB_PASS', $this->config['db']['password']);
