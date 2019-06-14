@@ -44,3 +44,6 @@ SET NODE_HOME=/opt/node10.16.0-linux-x64
 PATH = $PAHT:NODE_HOME
 ```
 删除上面自己添加的即可启动
+
+
+6. WSL 暂不支持 netstat  ss 等命令
