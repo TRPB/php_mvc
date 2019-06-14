@@ -23,7 +23,20 @@ class Fastphp
         // callable 在PHP 中的多种使用形式
         // @see https://segmentfault.com/q/1010000002510575
         spl_autoload_register(array($this, 'loadClass'));
-        echo phpinfo();
+        $this->setReporting();
+    }
+
+    // 检测开发环境
+    public function setReporting() {
+        if (APP_DEBUG === true) {
+            error_reporting(EALL);
+            ini_set('display_errors','On');
+            echo phpinfo();
+        } else {
+            error_reporting(E_ALL);
+            ini_set('display_errors','Off');
+            ini_set('log_errors', 'On');
+        }
     }
 
     // 自动加载类
