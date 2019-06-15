@@ -15,6 +15,8 @@ class Controller
     {
         $this->_controller = $controller;
         $this->_action = $action;
+        // 先在当前命名空间中找View 类，如果找不到的话
+        // 调用自动加载函数同时传入类名：fastphp\base\View
         $this->_view = new View($controller, $action);
     }
 
