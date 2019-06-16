@@ -2,7 +2,7 @@
 // 数据库配置
 $config['db']['host'] = 'localhost';
 $config['db']['username'] = 'singcl';
-$config['db']['password'] = '';
+$config['db']['password'] = 'singcl';
 $config['db']['dbname'] = 'project';
 
 // 默认控制器和操作名
