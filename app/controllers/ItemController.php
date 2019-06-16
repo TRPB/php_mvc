@@ -24,7 +24,7 @@ class ItemController extends Controller
             // 查询所有内容，并按倒序排列输出
             // where()方法可不传入参数，或者省略
             $items = (new ItemModel())->where()->order(['id DESC'])->fetchAll();
-            echo var_dump($items);
+            // echo var_dump($items);
         }
 
         $this->assign('title', '全部条目');
