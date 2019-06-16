@@ -83,4 +83,26 @@ class Sql
 
         return $sth->fetchAll();
     }
+
+    // 查询一条
+    public function fetch()
+    {
+        $sql = sprintf("select * from `%s` %s", $this->table, $this->filter);
+        $sth = Db::pdo()->prepare($sql);
+        $sth = $this->formatParam($sth, $this->param);
+        $sth->execute();
+
+        return $sth->fetch();
+    }
+
+    // 根据条件 (id) 删除
+    public function delete($id)
+    {
+        $sql = sprintf("delete from `%s` where `%s` = :%s", $this->table, $this->primary, $this->primary);
+        $sth = Db::pdo()->prepare($sql);
+        $sth = $this->formatParam($sth, [$this->primary => $id]);
+        $sth->execute();
+
+        return $sth->rowCount();
+    }
 }

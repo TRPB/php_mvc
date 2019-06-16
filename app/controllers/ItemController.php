@@ -32,4 +32,13 @@ class ItemController extends Controller
         $this->assign('items', $items);
         $this->render();
     }
+
+    // 删除记录，测试框架DB记录删除（Delete）
+    public function delete($id = null)
+    {
+        $count = (new ItemModel())->delete($id);
+        $this->assign('title', '删除成功');
+        $this->assign('count', $count);
+        $this->render();
+    }
 }
