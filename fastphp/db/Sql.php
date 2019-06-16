@@ -45,7 +45,7 @@ class Sql
     public function order($order = array())
     {
         if ($order) {
-            $this->filter .= ' ORDERBY ';
+            $this->filter .= ' ORDER BY ';
             $this->filter .= implode(',', $order);
         }
         return $this;
@@ -81,6 +81,6 @@ class Sql
         $sth = $this->formatParam($sth, $this->param);
         $sth->execute();
 
-        return $sth->fetch();
+        return $sth->fetchAll();
     }
 }
