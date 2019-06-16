@@ -33,6 +33,25 @@ class ItemController extends Controller
         $this->render();
     }
 
+    // 添加记录，测试框架DB记录创建（Create）
+    public function add()
+    {
+        if ($_POST['value']) {
+            $data['item_name'] = $_POST['value'];
+            // debug code
+            // echo \var_dump($data);
+            $count = (new ItemModel())->add($data);
+
+            $this->assign('title', '添加成功');
+            $this->assign('count', $count);
+            $this->render();
+        } else {
+            $this->assign('title', '添加失败');
+            $this->assign('count', 0);
+            $this->render();
+        }
+    }
+
     // 删除记录，测试框架DB记录删除（Delete）
     public function delete($id = null)
     {

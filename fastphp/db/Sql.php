@@ -73,6 +73,23 @@ class Sql
         return $sth;
     }
 
+    // 将数组转换成插入格式的sql语句
+    private function formatInsert($data)
+    {
+        $fields = array();
+        $names = array();
+
+        foreach ($data as $key => $value) {
+            $fields[] = sprintf("`%s`", $key);
+            $names[] = sprintf(":%s", $key);
+        }
+
+        $field = implode(',', $fields);
+        $name = implode(',', $names);
+
+        return sprintf("(%s) values (%s)", $field, $name);
+    }
+
     // 查询所有
     public function fetchAll()
     {
@@ -93,6 +110,18 @@ class Sql
         $sth->execute();
 
         return $sth->fetch();
+    }
+
+    // 新增数据
+    public function add($data)
+    {
+        $sql = sprintf("insert into `%s` %s", $this->table, $this->formatInsert($data));
+        $sth = Db::pdo()->prepare($sql);
+        $sth = $this->formatParam($sth, $data);
+        $sth = $this->formatParam($sth, $this->param);
+        $sth->execute();
+
+        return $sth->rowCount();
     }
 
     // 根据条件 (id) 删除

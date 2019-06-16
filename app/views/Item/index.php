@@ -3,6 +3,11 @@
     <input type="submit" value="搜索">
 </form>
 
+<form action="/item/add" method="post">
+    <input type="text" value="" name="value">
+    <input type="submit" value="新增">
+</form>
+
 <p><a href="/item/manage">新建</a></p>
 
 <table>
