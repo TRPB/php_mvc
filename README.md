@@ -47,3 +47,27 @@ PATH = $PAHT:NODE_HOME
 
 
 6. WSL 暂不支持 netstat  ss 等命令
+
+7. 
+```sh
+# 查看MYSQL数据库中所有用户
+mysql> SELECT DISTINCT CONCAT('User: ''',user,'''@''',host,''';') AS query FROM mysql.user;
+
+# 查看数据库中具体某个用户的权限
+mysql> select * from mysql.user where user='singcl' \G    
+
+#查看user表结构　需要具体的项可结合表结构来查询
+mysql> desc mysql.user;
+```
+
+8. 数据库操作相关问题
+```bash
+ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+# 创建新的管理员账户
+https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost
+
+#
+# 将新创建的管理员账号设置为密码链接
+ERROR 1698 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+https://www.jianshu.com/p/2b63c65caf6a
+```
