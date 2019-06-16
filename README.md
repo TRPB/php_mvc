@@ -71,3 +71,16 @@ https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-
 ERROR 1698 (28000): Access denied for user 'root'@'localhost' (using password: NO)
 https://www.jianshu.com/p/2b63c65caf6a
 ```
+
+
+## 启动
+```sh
+# 1 启动apache2
+sudo service apache2 start
+
+# 2 启动php-fpm
+sudo service php7.3-fpm start
+
+# 3 启动mysql
+sudo service mysql start
+```
