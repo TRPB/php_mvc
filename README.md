@@ -84,3 +84,49 @@ sudo service php7.3-fpm start
 # 3 启动mysql
 sudo service mysql start
 ```
+
+9. PDO 相关问题
+
+```sh
+# 环境：Ubuntu 16.02
+```
+
+代码中使用PDO 时候返回 `PDOException: can not find driver`。 然后我们查看`phpinfo()` 确认下： PDO 显示：`drivers no value`
+
+说明PDO 链接MYSQL 驱动找不到。
+
+网上搜索这个问题，答案都是挺多的， 赞成数最多的方案：
+```sh
+# @see https://stackoverflow.com/questions/32728860/php-7-rc3-how-to-install-missing-mysql-pdo
+
+# 第一步安装
+apt-get install php7.3-mysql
+
+#第二步 激活
+
+# phpenmod@see https://tecadmin.net/enable-disable-php-modules-ubuntu/
+phpenmod pdo_mysql
+
+ln: failed to create symbolic link '/etc/php/7.3/cli/conf.d/20-pdo_mysql.ini': Permission denied
+rm: cannot remove '/var/lib/php/modules/7.3/cli/disabled_by_admin/pdo_mysql': Permission denied
+
+# 可以看出来这一步会在/etc/php/7.3/cli/conf.d/ 中创建一个符号链接 到/etc/php/7.3/mods-abailable/pdo_mysql.so
+# 同时创建 /var/lib/php/modules/7.3/cli/enabled_by_admin/pdo_mysql
+
+# 权限不够sudo
+sudo phpenmod pdo_mysql
+# 第三步 重启
+sudo service apache2 restart
+```
+
+然后不幸的是还是失败了！！
+
+我观察`/etc/php/7.3`中的目录 发现有个fpm。  fpm 和 cli 目录下都有php.ini 文件？
+
+**我的PHP 使用的是 apache2 fast-cgi php-fpm 方式启动的，那么配置完三个步骤我只是重启了apache， php-fpm 是不是也要重启？**
+
+```sh
+sudo service php7.3-fpm restart
+```
+
+OK!! 成功了。
