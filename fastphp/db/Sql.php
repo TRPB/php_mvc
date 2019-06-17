@@ -90,6 +90,17 @@ class Sql
         return sprintf("(%s) values (%s)", $field, $name);
     }
 
+    // 将数组转换成更新格式的sql语句
+    private function formatUpdate($data)
+    {
+        $fields = array();
+        foreach ($data as $key => $value) {
+            $fields[] = sprintf("`s%` = :%s", $key, $key);
+        }
+
+        return implode(',', $fields);
+    }
+
     // 查询所有
     public function fetchAll()
     {
@@ -130,6 +141,18 @@ class Sql
         $sql = sprintf("delete from `%s` where `%s` = :%s", $this->table, $this->primary, $this->primary);
         $sth = Db::pdo()->prepare($sql);
         $sth = $this->formatParam($sth, [$this->primary => $id]);
+        $sth->execute();
+
+        return $sth->rowCount();
+    }
+
+    // 修改数据
+    public function update($data)
+    {
+        $sql = sprintf("update `%s` set s% s%", $this->table, $this->formatUpdate($data), $this->filter);
+        $sth = Db::pdo()->prepare($sql);
+        $sth = $this->formatParam($sth, $data);
+        $sth = $this->formatParam($sth, $this->param);
         $sth->execute();
 
         return $sth->rowCount();
