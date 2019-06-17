@@ -95,7 +95,7 @@ class Sql
     {
         $fields = array();
         foreach ($data as $key => $value) {
-            $fields[] = sprintf("`s%` = :%s", $key, $key);
+            $fields[] = sprintf("`%s` = :%s", $key, $key);
         }
 
         return implode(',', $fields);
@@ -149,7 +149,7 @@ class Sql
     // 修改数据
     public function update($data)
     {
-        $sql = sprintf("update `%s` set s% s%", $this->table, $this->formatUpdate($data), $this->filter);
+        $sql = sprintf("update `%s` set %s %s", $this->table, $this->formatUpdate($data), $this->filter);
         $sth = Db::pdo()->prepare($sql);
         $sth = $this->formatParam($sth, $data);
         $sth = $this->formatParam($sth, $this->param);
