@@ -85,4 +85,15 @@ class ItemController extends Controller
         $this->assign('count', $count);
         $this->render();
     }
+
+    // 查看单条记录详情
+    public function detail($id)
+    {
+        // 通过?占位符传入$id参数
+        // 有點类型上面的search 操作？
+        $item = (new ItemModel())->where(["id = ?"], [$id])->fetch();
+        $this->assign('title', '条目详情');
+        $this->assign('item', $item);
+        $this->render();
+    }
 }
