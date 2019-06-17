@@ -60,4 +60,29 @@ class ItemController extends Controller
         $this->assign('count', $count);
         $this->render();
     }
+
+    // 操作管理
+    public function manage($id = 0)
+    {
+        $item = array();
+        if ($id) {
+            // 通过名称占位符传入参数
+            $item = (new ItemModel())->where(["id = :id"], [':id' => $id])->fetch();
+        }
+
+        $this->assign('title', '管理条目');
+        $this->assign('item', $item);
+        $this->render();
+    }
+
+    // 更新记录，测试框架DB记录更新（Update）
+    public function update()
+    {
+        $data = array('id' => $_POST['id'], 'item_name' => $_POST['value']);
+        $count = (new ItemModel())->where(['id = :id'], [':id' => $data['id']])->update($data);
+
+        $this->assign('title', '修改成功');
+        $this->assign('count', $count);
+        $this->render();
+    }
 }
