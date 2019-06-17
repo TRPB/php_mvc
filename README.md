@@ -138,3 +138,18 @@ OK!! 成功了。
 @see https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost
 
 11. `php -r 'phpinfo();' | grep 'mysql'`
+
+## 调试
+
+xdebug 安装文档 https://xdebug.org/docs/install#compile
+
+vscode xdebug 文档 https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug
+
+#### pecl安装php扩展
+Pecl全称The PHP Extension Community Library，php社区扩展库，由社区编写，维护。
+
+使用pecl方便之处在于我们不用到处找源码包下载编译，配置，不用手动phpize,configure,make,make install,自动识别模块安装路径，
+
+我们只需要编辑php.ini配置文件开启扩展，当然我们也需要自己配置一些参数的时候可以先下载源码再构建
+
+https://www.cnblogs.com/hk-faith/p/8777289.html
