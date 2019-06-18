@@ -1,4 +1,9 @@
-![travis](https://travis-ci.org/singcl/php_mvc.svg?branch=master)
+[![travis](https://travis-ci.org/singcl/php_mvc.svg?branch=master)](https://travis-ci.org/singcl/php_mvc)
+[![Latest Stable Version](https://poser.pugx.org/singcl/php_mvc/v/stable)](https://packagist.org/packages/singcl/php_mvc)
+[![Total Downloads](https://poser.pugx.org/singcl/php_mvc/downloads)](https://packagist.org/packages/singcl/php_mvc)
+[![Latest Unstable Version](https://poser.pugx.org/singcl/php_mvc/v/unstable)](https://packagist.org/packages/singcl/php_mvc)
+[![License](https://poser.pugx.org/singcl/php_mvc/license)](https://packagist.org/packages/singcl/php_mvc)
+[![composer.lock](https://poser.pugx.org/singcl/php_mvc/composerlock)](https://packagist.org/packages/singcl/php_mvc)
 
 1. **unable to bind listening socket for address '/run/php/php7.1-fpm.sock' no such file or directory**
 
