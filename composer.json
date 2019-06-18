@@ -9,11 +9,6 @@
     ],
     "homepage": "https://www.incoco.com",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "singcl"
-        }
-    ],
     "require": {
         "php": "7.3"
     },
