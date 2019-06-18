@@ -1,3 +1,5 @@
+![travis](https://travis-ci.org/singcl/php_mvc.svg?branch=master)
+
 1. **unable to bind listening socket for address '/run/php/php7.1-fpm.sock' no such file or directory**
 
 原因：`php-fpm` 没有启动，如下启动：
