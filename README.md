@@ -153,3 +153,9 @@ Pecl全称The PHP Extension Community Library，php社区扩展库，由社区�
 我们只需要编辑php.ini配置文件开启扩展，当然我们也需要自己配置一些参数的时候可以先下载源码再构建
 
 https://www.cnblogs.com/hk-faith/p/8777289.html
+
+## Composer
+
+1. php composer.phar update 时候warning: `Failed to download phpunit/phpunit-mock-objects from dist: The zip extension and unzip command are both missing, skipping.`
+
+解决：没有安装zip导致的。 `sudo apt-get install zip`
