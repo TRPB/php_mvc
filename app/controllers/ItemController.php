@@ -14,7 +14,7 @@ class ItemController extends Controller
         // $this->assign('keyword', '苹果');
         // $this->assign('items', [['id' => 1, 'item_name' => '樱桃'], ['id' => 2, 'item_name' => '潘石榴']]);
         // // $this->render();
-        echo phpinfo();
+        // echo phpinfo();
 
         /***************** */
         $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';

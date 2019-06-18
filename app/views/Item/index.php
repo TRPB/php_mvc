@@ -10,7 +10,7 @@
 
 <p><a href="/item/manage">新建</a></p>
 
-<table>
+<table frame="border" cellpadding="5" rules="all">
     <tr>
         <th>ID</th>
         <th>内容</th>
