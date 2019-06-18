@@ -12,6 +12,12 @@
     "require": {
         "php": "7.3"
     },
+    "authors": [
+        {
+            "name": "singcl",
+            "email": "24661881@qq.com"
+        }
+    ],
     "require-dev": {
         "phpunit/phpunit": "~8.2.2"
     },
