@@ -1,0 +1,32 @@
+{
+    "name": "singcl/fastphp",
+    "description": "Simple and lightweight PHP framework",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "fastphp",
+        "mvc"
+    ],
+    "homepage": "https://www.incoco.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "gary"
+        }
+    ],
+    "require": {
+        "php": "7.3"
+    },
+    "require-dev": {},
+    "config": {
+        "preferred-install": "dist",
+        "platform": {
+            "php": "7.3"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        }
+    }
+}
