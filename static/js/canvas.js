@@ -545,4 +545,34 @@ function draw() {
             }
         }
     })();
+
+
+    // 文字阴影
+    (function () {
+        var canvas = document.getElementById("canvas23");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.shadowBlur = 2;
+            ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
+
+            ctx.font = "20px 楷体";
+            ctx.fillStyle = "Black";
+            ctx.fillText("我爱你，中国", 5, 30);
+        }
+    })();
+
+    // Canvas 填充规则
+    (function () {
+        var canvas = document.getElementById("canvas24");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(50, 50, 30, 0, Math.PI * 2, true);
+            ctx.arc(50, 50, 15, 0, Math.PI * 2, true);
+
+            ctx.fill("evenodd");
+        }
+    })();
 }

@@ -92,6 +92,14 @@
               <h4>图案样式 Patterns </h4>
               <canvas id="canvas22" width="150" height="150"></canvas>
           </div>
+          <div>
+              <h4>文字阴影 </h4>
+              <canvas id="canvas23" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>Canvas 填充规则 </h4>
+              <canvas id="canvas24" width="150" height="150"></canvas>
+          </div>
       </div>
       <script src="/static/js/canvas.js"></script>
   </body>
