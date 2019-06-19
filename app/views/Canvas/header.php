@@ -7,10 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $title ?></title>
     <style>
-        .graph>* {
+        .graph>*,
+        .color-style>* {
             display: inline-block;
             vertical-align: top;
             text-align: center;
+        }
+
+        .color-style>*:not(:last-child) {
+            margin-right: 15px;
         }
     </style>
 </head>

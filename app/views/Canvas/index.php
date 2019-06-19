@@ -41,7 +41,52 @@
           </div>
           <div>
               <h4>绘制路径 - Path2D对象</h4>
-              <canvas id="canvas11" width="200" height="200"></canvas>
+              <canvas id="canvas11" width="150" height="100"></canvas>
+          </div>
+      </div>
+
+      <h3>3.添加样式和颜色</h3>
+      <div class="color-style">
+          <div>
+              <h4>fillStyle </h4>
+              <canvas id="canvas12" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>strokeStyle </h4>
+              <canvas id="canvas13" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>globalAlpha </h4>
+              <canvas id="canvas14" width="150" height="150"></canvas>
+          </div>
+
+          <div>
+              <h4>RGBA </h4>
+              <canvas id="canvas15" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>线型 - lineWidth </h4>
+              <canvas id="canvas16" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>线型 - lineCap </h4>
+              <canvas id="canvas17" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>线型 - lineJoin </h4>
+              <canvas id="canvas18" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>线型 - 使用蚂蚁线 </h4>
+              <canvas id="canvas19" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>线型 - 线性渐变 </h4>
+              <canvas id="canvas20" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>线型 - 径向渐变 </h4>
+              <canvas id="canvas21" width="150" height="150"></canvas>
           </div>
       </div>
       <script src="/static/js/canvas.js"></script>
