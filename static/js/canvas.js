@@ -527,4 +527,22 @@ function draw() {
             ctx.fillRect(0, 0, 150, 150);
         }
     })();
+
+    // 图案样式 Patterns
+    (function () {
+        var canvas = document.getElementById("canvas22");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            // 创建新 image 对象，用作图案
+            var img = new Image();
+            img.src = '/static/images/zan.png';
+
+            img.onload = function () {
+                // 创建图案
+                var ptrn = ctx.createPattern(img, 'repeat');
+                ctx.fillStyle = ptrn;
+                ctx.fillRect(0, 0, 150, 150);
+            }
+        }
+    })();
 }

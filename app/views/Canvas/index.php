@@ -88,6 +88,10 @@
               <h4>线型 - 径向渐变 </h4>
               <canvas id="canvas21" width="150" height="150"></canvas>
           </div>
+          <div>
+              <h4>图案样式 Patterns </h4>
+              <canvas id="canvas22" width="150" height="150"></canvas>
+          </div>
       </div>
       <script src="/static/js/canvas.js"></script>
   </body>
