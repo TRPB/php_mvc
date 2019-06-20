@@ -10,7 +10,8 @@
         .graph>*,
         .color-style>*,
         .canvas-img>*,
-        .canvas-transformation>* {
+        .canvas-transformation>*,
+        .compositing>* {
             display: inline-block;
             vertical-align: top;
             text-align: center;

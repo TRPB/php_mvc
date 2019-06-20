@@ -133,6 +133,12 @@
           </div>
       </div>
       <h3>7.合成与裁剪</h3>
-      <h4><a href="/canvas/compositing">图像合成</a></h4>
+      <div class="compositing">
+          <h4><a href="/canvas/compositing">图像合成</a></h4>
+          <div>
+              <h4>clip</h4>
+              <canvas id="canvas30" width="150" height="150"></canvas>
+          </div>
+      </div>
       <script src="/static/js/canvas.js"></script>
   </body>
