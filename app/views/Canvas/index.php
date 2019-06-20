@@ -112,5 +112,25 @@
               <h4>切片 Slicing </h4>
           </div>
       </div>
+      <h3>6.变形</h3>
+      <div class="canvas-transformation">
+          <div>
+              <h4>save 和 restore</h4>
+              <canvas id="canvas26" width="150" height="150"></canvas>
+          </div>
+
+          <div>
+              <h4>translate</h4>
+              <canvas id="canvas27" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>rotate</h4>
+              <canvas id="canvas28" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>scale</h4>
+              <canvas id="canvas29" width="150" height="150"></canvas>
+          </div>
+      </div>
       <script src="/static/js/canvas.js"></script>
   </body>

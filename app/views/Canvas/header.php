@@ -9,7 +9,8 @@
     <style>
         .graph>*,
         .color-style>*,
-        .canvas-img>* {
+        .canvas-img>*,
+        .canvas-transformation>* {
             display: inline-block;
             vertical-align: top;
             text-align: center;
