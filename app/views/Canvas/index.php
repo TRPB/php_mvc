@@ -101,5 +101,16 @@
               <canvas id="canvas24" width="150" height="150"></canvas>
           </div>
       </div>
+      <h3>4.绘制文本</h3>
+      <h3>5.使用图片</h3>
+      <div class="canvas-img">
+          <div>
+              <h4>缩放 Scaling </h4>
+              <canvas id="canvas25" width="150" height="150"></canvas>
+          </div>
+          <div>
+              <h4>切片 Slicing </h4>
+          </div>
+      </div>
       <script src="/static/js/canvas.js"></script>
   </body>

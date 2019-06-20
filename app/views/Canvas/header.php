@@ -8,7 +8,8 @@
     <title><?php echo $title ?></title>
     <style>
         .graph>*,
-        .color-style>* {
+        .color-style>*,
+        .canvas-img>* {
             display: inline-block;
             vertical-align: top;
             text-align: center;
