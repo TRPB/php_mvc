@@ -132,5 +132,7 @@
               <canvas id="canvas29" width="150" height="150"></canvas>
           </div>
       </div>
+      <h3>7.合成与裁剪</h3>
+      <h4><a href="/canvas/compositing">图像合成</a></h4>
       <script src="/static/js/canvas.js"></script>
   </body>

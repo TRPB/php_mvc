@@ -14,4 +14,10 @@ class CanvasController extends Controller
         $this->render();
         // echo phpinfo();
     }
+
+    public function compositing()
+    {
+        $this->assign('title', '图像合成实例');
+        $this->render();
+    }
 }
