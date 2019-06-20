@@ -11,7 +11,8 @@
         .color-style>*,
         .canvas-img>*,
         .canvas-transformation>*,
-        .compositing>* {
+        .compositing>*,
+        .animation>* {
             display: inline-block;
             vertical-align: top;
             text-align: center;

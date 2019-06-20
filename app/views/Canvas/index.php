@@ -140,5 +140,12 @@
               <canvas id="canvas30" width="150" height="150"></canvas>
           </div>
       </div>
+      <h3>8.基本动画</h3>
+      <div class="animation">
+          <div>
+              <h4>太阳系的动画</h4>
+              <canvas id="canvas31" width="300" height="300"></canvas>
+          </div>
+      </div>
       <script src="/static/js/canvas.js"></script>
   </body>
