@@ -146,6 +146,15 @@
               <h4>太阳系的动画</h4>
               <canvas id="canvas31" width="300" height="300"></canvas>
           </div>
+          <div>
+              <h4>动画时钟</h4>
+              <canvas id="canvas32" width="150" height="150"></canvas>
+          </div>
+
+          <div>
+              <h4>循环全景照片</h4>
+              <canvas id="canvas33" width="800" height="200"></canvas>
+          </div>
       </div>
       <script src="/static/js/canvas.js"></script>
   </body>
