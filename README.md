@@ -166,3 +166,10 @@ https://www.cnblogs.com/hk-faith/p/8777289.html
 1. php composer.phar update 时候warning: `Failed to download phpunit/phpunit-mock-objects from dist: The zip extension and unzip command are both missing, skipping.`
 
 解决：没有安装zip导致的。 `sudo apt-get install zip`
+
+## Page 相关页面
+```sh
+loacalhost               # 增删改查数据库         
+loacalhost/canvas        # canvas画布相关示例
+loacalhost/scratch       # 刮刮卡示例
+```
