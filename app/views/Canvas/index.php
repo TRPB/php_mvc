@@ -156,5 +156,33 @@
               <canvas id="canvas33" width="800" height="200"></canvas>
           </div>
       </div>
+      <h3>9.高级动画</h3>
+      <h3>10.像素操作</h3>
+      <div class="pxx">
+          <div>
+              <h4>颜色选择器</h4>
+              <div id="color"></div>
+              <canvas id="canvas34" width="300" height="300"></canvas>
+          </div>
+          <div>
+              <h4>图片灰度和反相颜色</h4>
+              <div>
+                  <button id="invertbtn">反相</button>
+                  <button id="grayscalebtn">灰度</button>
+              </div>
+              <canvas id="canvas35" width="300" height="300"></canvas>
+          </div>
+          <div>
+              <h4>缩放和反锯齿</h4>
+              <div>
+                  <input type="checkbox" name="" value="" checked="checked" id="smoothbtn">反锯齿
+              </div>
+              <div style="position:relative">
+                  <canvas id="canvas36" width="300" height="300"></canvas>
+                  <canvas id="zoom" style="position:absolute; top: 0; right: -80px;" width="100" height="100"></canvas>
+              </div>
+          </div>
+      </div>
       <script src="/static/js/canvas.js"></script>
+
   </body>

@@ -12,7 +12,8 @@
         .canvas-img>*,
         .canvas-transformation>*,
         .compositing>*,
-        .animation>* {
+        .animation>*,
+        .pxx>* {
             display: inline-block;
             vertical-align: top;
             text-align: center;
@@ -20,6 +21,11 @@
 
         .color-style>*:not(:last-child) {
             margin-right: 15px;
+        }
+
+        .pxx #color {
+            width: 100%;
+            height: 20px;
         }
     </style>
 </head>
