@@ -173,3 +173,80 @@ loacalhost               # 增删改查数据库
 loacalhost/canvas        # canvas画布相关示例
 loacalhost/scratch       # 刮刮卡示例
 ```
+
+
+## Apache2 php7.3 php7.3-fpm
+
+1. 初始化配置
+```sh
+sudo apt-get install software-properties-common
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt-get update
+```
+
+2. 安装主要package
+```sh
+# https://www.zhaokeli.com/article/8496.html
+sudo apt-get install apache2 php7.3 php7.3-fpm php7.3-mysql mysql-server
+```
+
+3. **配置apache2**（关键步骤）
+``` sh
+# https://blog.csdn.net/KBellX/article/details/78980317
+
+# 配置apache 使用php-fpm fcgi
+sudo ln -s /etc/apache2/mods-available/proxy.conf /etc/apache2/mods-enabled/proxy.conf
+sudo ln -s /etc/apache2/mods-available/proxy.load /etc/apache2/mods-enabled/proxy.load
+sudo ln -s /etc/apache2/mods-available/proxy_fcgi.load /etc/apache2/mods-enabled/proxy_fcgi.load
+
+# 配置 2 /etc/apache2/sites-enabled/000.default.conf
+1 <VirtualHost *:80>
+  2         # The ServerName directive sets the request scheme, hostname and port that
+  3         # the server uses to identify itself. This is used when creating
+  4         # redirection URLs. In the context of virtual hosts, the ServerName
+  5         # specifies what hostname must appear in the request's Host: header to
+  6         # match this virtual host. For the default virtual host (this file) this
+  7         # value is not decisive as it is used as a last resort host regardless.
+  8         # However, you must set it for any further virtual host explicitly.
+  9         ServerName mv.hongde.com
+ 10         ServerAdmin webmaster@localhost
+ 11         DocumentRoot /home/singcl/php_mvc
+ 12
+ 13         # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+ 14         # error, crit, alert, emerg.
+ 15         # It is also possible to configure the loglevel for particular
+ 16         # modules, e.g.
+ 17         #LogLevel info ssl:warn
+ 18        <Directory /home/singcl/php_mvc>
+ 19             Options +FollowSymlinks
+ 20             AllowOverride All
+ 21             Require all granted
+ 22        </Directory>
+ 23
+ 24        <FilesMatch \.php$>
+ 25             SetHandler "proxy:unix:/var/run/php/php7.3-fpm.sock|fcgi://localhost/"
+ 26        </FilesMatch>
+ 27         ErrorLog ${APACHE_LOG_DIR}/error.log
+ 28         CustomLog ${APACHE_LOG_DIR}/access.log combined
+ 29
+ 30         # For most configuration files from conf-available/, which are
+ 31         # enabled or disabled at a global level, it is possible to
+ 32         # include a line for only one particular virtual host. For example the
+ 33         # following line enables the CGI configuration for this host only
+ 34         # after it has been globally disabled with "a2disconf".
+ 35         #Include conf-available/serve-cgi-bin.conf
+ 36 </VirtualHost>
+```
+
+4. 启动
+
+```sh
+# 1 启动apache2
+sudo service apache2 start
+
+# 2 启动php-fpm
+sudo service php7.3-fpm start
+
+# 3 启动mysql
+sudo service mysql start
+```
