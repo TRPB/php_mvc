@@ -193,11 +193,13 @@ sudo apt-get install apache2 php7.3 php7.3-fpm php7.3-mysql mysql-server
 3. **配置apache2**（关键步骤）
 ``` sh
 # https://blog.csdn.net/KBellX/article/details/78980317
+# https://blog.csdn.net/margin_0px/article/details/82801045
 
 # 配置apache 使用php-fpm fcgi
 sudo ln -s /etc/apache2/mods-available/proxy.conf /etc/apache2/mods-enabled/proxy.conf
 sudo ln -s /etc/apache2/mods-available/proxy.load /etc/apache2/mods-enabled/proxy.load
 sudo ln -s /etc/apache2/mods-available/proxy_fcgi.load /etc/apache2/mods-enabled/proxy_fcgi.load
+sudo ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
 
 # 配置 2 /etc/apache2/sites-enabled/000.default.conf
 1 <VirtualHost *:80>
