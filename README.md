@@ -250,3 +250,24 @@ sudo service php7.3-fpm start
 # 3 启动mysql
 sudo service mysql start
 ```
+
+## MYSQL
+```sh
+# root 用户登录
+sudo mysql -u root -p;
+```
+```sh
+# 新建用户
+create user 'singcl'@'localhost' indentified by 'singcl';
+```
+```sh
+# 新建数据库
+create database project;
+```
+```sh
+# 授权用户singcl@localhost 拥有数据库project 的所有权;
+# https://blog.csdn.net/lindiwo/article/details/81708166
+grant all privileges on project.* to singcl@localhost identified by 'singcl';
+# 刷新
+flush privileges;
+```
