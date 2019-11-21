@@ -273,3 +273,22 @@ grant all privileges on project.* to singcl@localhost identified by 'singcl';
 # 刷新
 flush privileges;
 ```
+```sh
+# 切换用户
+mysql -u singcl -p;
+
+# 在 SQL 中新建一个 project 数据库（上面已经完成），增加一个item 表、并插入两条记录，命令如下：
+#CREATE DATABASE `project` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `project`;
+
+CREATE TABLE `item` (
+    `id` int(11) NOT NULL auto_increment,
+    `item_name` varchar(255) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+ 
+INSERT INTO `item` VALUES(1, 'Hello World.');
+INSERT INTO `item` VALUES(2, 'Lets go!');
+```
+
+@Refer: https://www.awaimai.com/128.html#51
