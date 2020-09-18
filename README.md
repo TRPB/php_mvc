@@ -334,3 +334,15 @@ OK, 访问localhost：
 ![web根目录配置](./static/images/serverapi.jpg)
 
 大功告成！
+
+# 错误
+1. `php SQLSTATE[HY000] [2002] No such file or directory`
+
+解决：将数据库配置里面'localhost'改为`127.0.0.1`即可。
+
+2. 要想使.htaccess 重写规则生效的话:
+```
+AllowOverride None
+# 改为
+AllowOverride All
+```
