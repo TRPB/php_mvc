@@ -292,3 +292,45 @@ INSERT INTO `item` VALUES(2, 'Lets go!');
 ```
 
 @Refer: https://www.awaimai.com/128.html#51
+
+# MAC 使用系统自带的Apache和PHP-FPM 开启Apache+PHP-FPM服务
+
+1. copy一份配置文件
+```shell
+cd /etc/cd /etc/apache2/
+sudo cp httpd.conf.bak httpd.conf
+```
+
+2. 打开配置文件编辑
+```sh
+sudo vim httpd.conf
+```
+解开相关依赖模块注释，如图
+![需要解注释](./static/images/81A03208-2D7D-4B35-B231-3F5F0ACE4480.png)
+
+3. 配置web服务器目录
+
+![web根目录配置](./static/images/documentroot.jpg)
+
+4. 解开虚拟主机路径
+![web根目录配置](./static/images/vhost-path.jpg)
+
+5. 配置vhost
+```sh
+sudo vim extra/httpd-vhosts.conf
+```
+如图：
+![web根目录配置](./static/images/vhostconfig.jpg)
+
+好了，现在配置已经完成。在/data/www下建一个文件：
+```sh
+touch index.php
+```
+```php
+<?php
+  phpinfo();
+````
+OK, 访问localhost：
+![web根目录配置](./static/images/serverapi.jpg)
+
+大功告成！

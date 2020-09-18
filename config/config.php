@@ -2,7 +2,7 @@
 // 数据库配置
 $config['db']['host'] = 'localhost';
 $config['db']['username'] = 'singcl';
-$config['db']['password'] = 'singcl';
+$config['db']['password'] = '123456';
 $config['db']['dbname'] = 'project';
 
 // // 数据库配置 - 发布STUDIO 云配置
